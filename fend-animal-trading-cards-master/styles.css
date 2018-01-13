@@ -1,0 +1,25 @@
+/* add your CSS here */
+
+.card {
+  border: 2px solid #00FF00;
+  width: 300px;
+  padding: 15px;
+}
+
+.panda {
+  width: 300px;
+  padding-bottom: 10px;
+}
+
+.info {
+  border: 2px solid darkgreen;
+  padding: 5px;
+}
+
+#fact {
+  font-style: italic;
+}
+
+ul li span {
+  font-weight: bold;
+}
