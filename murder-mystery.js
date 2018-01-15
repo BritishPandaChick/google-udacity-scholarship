@@ -9,14 +9,26 @@ var suspect = "Mr. Parkes";
 var weapon = "";
 var solved = false;
 
-if (/* your conditional goes here */ weapon === room) {
-  solved = true;
-} else if (/* your conditional goes here */ room === suspect ) {
+if (/* your conditional goes here */ room === "gallery") {
+  weapon = "trophy";
+  if (suspect === "Ms. Van Cleve") {
     solved = true;
-} else if (/* your conditional goes here */ suspect === weapon) {
+  }
+} else if (/* your conditional goes here */ room === "ballroom" ) {
+  weapon = "poison";
+  if (suspect === "Mr. Kalehoff") {
     solved = true;
+  }
+} else if (/* your conditional goes here */ room === "billiards room") {
+  weapon = "pool stick";
+  if (suspect === "Mrs. Sparr") {
+    solved = true;
+  }
 } else {
-    return "You are wrong!"
+    weapon = "knife";
+    if (suspect === "Mr. Parkes") {
+      solved = true;
+    }
 }
 
 if (solved) {
