@@ -1,4 +1,8 @@
 // Select color input
+$('.cells').click(function (event) {
+  var paint = $('#colorPicker').val();
+  $(event.target).css('background-color', paint);
+});
 
 // Select size input
 $('#sizePicker').submit(function makeGrid(grid){
