@@ -5,6 +5,10 @@ $(function (){
 // Select size input
   var heightInput = $('#inputHeight');
   var weightInput = $('#inputWeight');
+
+//select canvas
+  var canvas = $('#pixelCanvas');
+
 // When size is submitted by the user, call makeGrid()
 
   function makeGrid() {
@@ -25,7 +29,7 @@ $(function (){
     }
 
   //draw grid col
-    for (var j = 0; j < gridCol; j++) {
+    for (var i = 0; i < gridCol; i++) {
       canvas.find('tr').append('<td class="transparent"></td>');
     }
   }
