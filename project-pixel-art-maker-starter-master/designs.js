@@ -42,7 +42,7 @@ $(function (){
     });
 
   //toggle grid color
-    $('#pixel_canvas').on('click', 'td', function(e){
+    $('#pixelCanvas').on('click', 'td', function(e){
       var color = colorPicker.val();
       var currentColor = $(this).css('background-color');
       console.log(currentColor + ' color:' + color);
