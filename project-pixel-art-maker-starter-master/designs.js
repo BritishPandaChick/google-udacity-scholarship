@@ -1,13 +1,13 @@
 $(function (){
 
 // Select color input
-  var colorPicker = $('#colorPicker');
+  const colorPicker = $('#colorPicker');
 // Select size input
-  var heightInput = $('#inputHeight');
-  var weightInput = $('#inputWeight');
+  const heightInput = $('#inputHeight');
+  const weightInput = $('#inputWeight');
 
 //select canvas
-  var canvas = $('#pixelCanvas');
+  const canvas = $('#pixelCanvas');
 
 // When size is submitted by the user, call makeGrid()
 
@@ -24,12 +24,12 @@ $(function (){
     var canvasBody = canvas.find('tbody');
 
   //drawing grid rows
-    for (var i = 0; i < gridRows; i++) {
+    for (let i = 0; i < gridRows; i++) {
       canvasBody.append('<tr></tr>');
     }
 
   //draw grid col
-    for (var i = 0; i < gridCol; i++) {
+    for (let i = 0; i < gridCol; i++) {
       canvas.find('tr').append('<td class="transparent"></td>');
     }
   }
