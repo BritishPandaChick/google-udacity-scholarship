@@ -1,59 +1,35 @@
-$(function (){
+// function for makeGrid
+function makeGrid() {
+  // Select size input
+  const height = document.getElementById("inputHeight");
+  const width = document.getElementById("inputWidth");
+  //select canvas
+  const canvas = document.getElementById("pixelCanvas");
 
-// Select color input
-  var colorPicker = $('#colorPicker');
-// Select size input
-  var heightInput = $('#inputHeight');
-  var weightInput = $('#inputWeight');
+  canvas.innerHTML = "";
 
-//select canvas
-  var canvas = $('#pixelCanvas');
+  for (let i = 0; i < height.value; i++) {
+    let tr = document.createElement("tr");
+    canvas.appendChild(tr);
 
-// When size is submitted by the user, call makeGrid()
-
-  function makeGrid() {
-    canvas.find('tbody').remove();
-
-  //submit button size changes to fit grid size
-    var gridRows = heightInput.val();
-    var gridCol = weightInput.val();
-
-  //tbody set to the table
-    canvas.append('<tbody></tbody>');
-
-    var canvasBody = canvas.find('tbody');
-
-  //drawing grid rows
-    for (var i = 0; i < gridRows; i++) {
-      canvasBody.append('<tr></tr>');
-    }
-
-  //draw grid col
-    for (var i = 0; i < gridCol; i++) {
-      canvas.find('tr').append('<td class="transparent"></td>');
+    for (let j = 0; j < width.value; j++) {
+      let td = document.createElement("td");
+      tr.appendChild(td);
     }
   }
 
-//update grid when submit button clicked
-  $(document).ready(function(){
-    $('input[type="submit"]').on('click', function(e){
-      e.preventDefault();
-      makeGrid();
-    });
-
   //toggle grid color
-    $('#pixelCanvas').on('click', 'td', function(e){
-      var color = colorPicker.val();
-      var currentColor = $(this).css('background-color');
-      console.log(currentColor + ' color:' + color);
-
-      if ($(this).hasClass('transparent')) {
-        $(this).toggleClass('transparent');
-        $(this).css('background-color', color);
-      } else {
-        $(this).toggleClass('transparent');
-        $(this).css('background-color', 'transparent');
-      }
-    })
+  let color = document.getElementById("colorPicker");
+  canvas.addEventListener("click", function(e) {
+    if (e.target.nodeName === "TD") {
+      e.target.style.backgroundColor = color.value;
+    }
   });
+}
+
+// When size is submitted by the user, call makeGrid()
+
+sizePicker.addEventListener("submit", function(e) {
+  e.preventDefault();
+  makeGrid();
 });
